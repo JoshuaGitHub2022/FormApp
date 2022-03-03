@@ -1,0 +1,73 @@
+<div class="center-form">
+    <div class="left-form-side">
+        <ul class="ul-green">
+            <li>RELATIONSHIPS MEAN SOMETHING</li><br>
+        </ul>
+        <h1>Family-owned and operated since 1923</h1>
+        <p>We're local like you and always on your side. That's why our
+           people work everyday to innovate and serve you the best possible
+           solutions to run your business.
+        </p>
+    </div>
+    <div class="right-form-side">
+        <div class="form">
+            <h2 class="center-text">How can we help?</h2>
+            <div class="contain">
+                <div class="wrapper">
+                    <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="full-width form-input">
+                            <label for="name">Name
+                                <span
+                                    *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)">
+                                    <span *ngIf="contactForm.controls['name'].errors?.['required']" class="red-text">
+                                        *
+                                    </span>
+                                </span>
+                            </label>
+                            <input id="name" type="text" class="full-input" formControlName="name">
+                        </div>
+                        <div class="form-input">
+                            <label for="email">Email <span
+                                    *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)">
+                                    <span *ngIf="contactForm.controls['email'].errors?.['required']" class="red-text">
+                                        *
+                                    </span>
+                                </span>
+                            </label>
+                            <input id="email" type="text" formControlName="email">
+                        </div>
+                        <div class="form-input">
+                            <label for="phonenumber">Phone Number <span
+                                    *ngIf="contactForm.controls['phoneNumber'].invalid && (contactForm.controls['phoneNumber'].dirty || contactForm.controls['phoneNumber'].touched)">
+                                    <span *ngIf="contactForm.controls['phoneNumber'].errors?.['required']"
+                                        class="red-text">
+                                        *
+                                    </span>
+                                </span>
+                            </label>
+                            <input id="phonenumber" type="text" formControlName="phoneNumber">
+                        </div>
+                        <div class="form-input">
+                            <label for="companyname">Company Name <span
+                                    *ngIf="contactForm.controls['companyName'].invalid && (contactForm.controls['companyName'].dirty || contactForm.controls['companyName'].touched)">
+                                    <span *ngIf="contactForm.controls['companyName'].errors?.['required']"
+                                        class="red-text">
+                                        *
+                                    </span>
+                                </span>
+                            </label>
+                            <input id="companyname" type="text" formControlName="companyName">
+                        </div>
+                        <div class="form-input">
+                            <label for="typeofbusiness">Type of Business</label>
+                            <input id="typeofbusiness" type="text" formControlName="typeOfBusiness">
+                        </div>
+                        <div class="full-width center">
+                            <button type="submit" [disabled]="!contactForm.valid">GET IN TOUCH</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
